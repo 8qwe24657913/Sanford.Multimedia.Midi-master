@@ -1,25 +1,46 @@
 Sanford.Multimedia.Midi
 =======================
 
-This is all source code of the C# MIDI toolkit from CodeProject by Leslie Sanford.
+C# 课程实验2
 
-Improvements:
-- 64-bit compatible
-- Windows 8 and 10 compatible
-- Mono framework compatible on Windows
-- Does not require additional assemblies
-- Faster midi file reading in Release build
+![winform](https://raw.githubusercontent.com/8qwe24657913/Sanford.Multimedia.Midi-master/master/images/winform.gif)
 
-Also avaliable on Nuget.org
+## 功能概述
 
-    PM> Install-Package Sanford.Multimedia.Midi
+除简单播放外，还实现了：
 
-If you have any improvement or fix to this library, please don't hesitate to make a fork and open a pull request.
+1. 单曲循环、列表循环功能开关
 
-MIT License
+2. 播放列表长度大于1时显示播放列表，可点击播放列表切歌
 
-Credits:
+3. 简化了界面和操作逻辑，使之比起代码逻辑本身更符合人类的操作习惯
 
-http://www.codeproject.com/Articles/6228/C-MIDI-Toolkit
+4. 采用双层窗口技巧使界面半透明，更具美感
 
-https://code.google.com/p/vsticks/
+5. 计算总时长和已播放时长，并实时更新标题，方便用户直观观察播放时间
+
+6. 解决了原程序出现死锁问题的bug
+
+## 项目特色
+
+☑ 功能丰富
+
+☑ 易于操作
+
+☑ 美观大方
+
+☑ 实用性强
+
+## 代码总量
+
+约 550 行左右
+
+## 工作时间
+
+约三~五晚
+
+## 结论
+
+1. MIDI 文件本身没有时长字段，原程序按tick数而非时间设置进度条，会误导使用者。通过遍历拍速meta信息计算拍速对应的每tick时长与tick数的乘积之和才能得到真正时长
+
+2. `WinForm` 技术栈较为过时，不能很好的支持透明，双层窗口的 trick 充其量是一种 hack，会造成文字周围白边，真正需要透明的话还是要用 `WPF` 或者直接调 `Windows API`
