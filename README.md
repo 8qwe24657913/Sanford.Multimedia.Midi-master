@@ -3,7 +3,7 @@ Sanford.Multimedia.Midi
 
 C# 课程实验2
 
-![winform](https://raw.githubusercontent.com/8qwe24657913/Sanford.Multimedia.Midi-master/master/images/winform.gif)
+![winform](https://raw.githubusercontent.com/8qwe24657913/Sanford.Multimedia.Midi-master/master/Images/winform.gif)
 
 ## 功能概述
 
