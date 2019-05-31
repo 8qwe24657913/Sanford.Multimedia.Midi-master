@@ -19,7 +19,7 @@ C# 课程实验2
 
 ## 实现细节
 
-\1. 关于循环播放：
+1. 关于循环播放：
 
 不能在播放结束事件中直接调用播放开始函数，因为播放结束函数并不会在主线程运行，调用时会报错
 
@@ -31,7 +31,7 @@ C# 课程实验2
 
 ![img](https://raw.githubusercontent.com/8qwe24657913/Sanford.Multimedia.Midi-master/master/Images/lock.png) 
 
-\2. 关于时间显示
+2. 关于时间显示
 
 项目自带的“进度条”并不能标识播放时间，因为它标识的是 Ticks，而Ticks 与时间的关系中要乘上拍速，拍速又可以由 meta message 动态改变，导致时间与用户直观看到的进度条不符
 
@@ -43,7 +43,7 @@ C# 课程实验2
 
 ![img](https://raw.githubusercontent.com/8qwe24657913/Sanford.Multimedia.Midi-master/master/Images/blackmagic.png) 
 
-\3. 关于透明的实现
+3. 关于透明的实现
 
 WindowsForm 对于透明的支持极差，唯二的透明方法是设定 Opacity和 TransparencyKey，前者会导致整个窗口（包括文字和控件）都变得透明，难以直接使用，后者的工作原理是先画好整个窗口，再将颜色与 TransparencyKey 相同的像素直接扣掉，问题在于被扣掉的位置完全没有颜色，而且会有鼠标穿透，再加上文字的边缘像素颜色既与文字颜色不同，又与 TransparencyKey 不同，会留下难看的白边
 
