@@ -12,7 +12,8 @@ namespace SequencerDemo {
             sequencerEnumField.SetValue(seq, new List<IEnumerator<int>>());
         }
         */
-        private static readonly FieldInfo sequencerClockField = typeof(Sequencer).GetField("clock", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly FieldInfo sequencerClockField = 
+            typeof(Sequencer).GetField("clock", BindingFlags.NonPublic | BindingFlags.Instance);
         public static MidiInternalClock GetClock(Sequencer seq) {
             return sequencerClockField.GetValue(seq) as MidiInternalClock;
         }
